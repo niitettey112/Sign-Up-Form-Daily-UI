@@ -78,27 +78,6 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.content__wrapper::before{
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 400px;
-    height: 550px;
-    background-color: #012b22;
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-}
-
-@keyframes animate{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
 .form__wrapper{
     position: absolute;
     inset: 5px;
