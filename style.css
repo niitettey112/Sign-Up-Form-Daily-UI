@@ -1,0 +1,193 @@
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+}
+
+/*
+ Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(45deg, #134E5E,#71B280);
+}
+
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+9. Create a root stacking context
+*/
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.content__wrapper{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    box-shadow: 0px 57px 80px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    background-color: #E7E7E9;
+    overflow: hidden;
+}
+
+.content__wrapper::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 400px;
+    height: 550px;
+    background-color: #012b22;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.form__wrapper{
+    position: absolute;
+    inset: 5px;
+    border-radius: 10px;
+    background-color: #E7E7E9;
+    z-index: 10;
+} 
+
+.title__text{
+    text-align: center;
+    margin: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title__text h2{
+    font-weight: 800;
+    color: #012b22;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+}
+
+.title__text p{
+    padding-top: 10px;
+    font-weight: 300;
+    color: #012b22;
+}
+
+.title__text h3{
+    margin-top: 20px;
+    background-color: #012b22;
+    color: #E7E7E9;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form__input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px 35px;
+    padding: 5px;
+    gap: 10px;
+}
+
+.form__input input{
+    padding: 5px 10px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    color: #012b2259;
+    font-weight: 600;
+    border: 2px solid #012b2259;
+    border-radius: 5px;
+}
+
+.form__input input:valid,
+.form__input input:focus{
+    color: #012b22;
+    border-color: #012b22;
+    transition: .5s ease-in-out;
+}
+
+.form__input ::placeholder{
+    color: #012b228e;
+    font-weight: 600;
+    font-size: .879rem;
+}
+
+
+.submit__btn{
+    margin: 0px 10px;
+    padding: 0px 80px; 
+}
+
+.submit__btn button{
+    background-color: #012b22;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: #E7E7E9;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: .5s ease;
+}
+
+.submit__btn button:hover{
+    background-color: #0c5c4b;
+}
